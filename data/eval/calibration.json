@@ -1,0 +1,27 @@
+{
+  "description": "Separate calibration questions (NOT used for evaluation) to tune the LLMOps retrieval-confidence threshold for the chosen embedding model.",
+  "in_scope": [
+    "How much attendance do I need to be eligible for exams?",
+    "Who should I apply to if I was absent unexpectedly?",
+    "Where is the Bannerghatta Road campus?",
+    "What is the phone number of the Kengeri campus admissions office?",
+    "How is CIA evaluated and approved?",
+    "Is ragging allowed on campus?",
+    "Can I take part in political activities on campus?",
+    "Where can I see supplementary exam notifications?",
+    "What does the counselling centre do?",
+    "Do I need permission to put up a poster on the notice board?"
+  ],
+  "out_of_scope": [
+    "What is the capital of Australia?",
+    "Recommend a good movie to watch tonight.",
+    "How do I bake a chocolate cake?",
+    "What is the price of Bitcoin today?",
+    "Explain quantum entanglement in simple terms.",
+    "Who won the FIFA World Cup in 2014?",
+    "Write a poem about the ocean.",
+    "What are the best tourist places in Goa?",
+    "How do I fix a flat bicycle tyre?",
+    "What is the stock price of Infosys?"
+  ]
+}

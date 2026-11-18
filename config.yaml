@@ -1,0 +1,44 @@
+# ---------------------------------------------------------------
+# Christ University Student Helpdesk - configuration
+# ---------------------------------------------------------------
+ollama:
+  base_url: http://localhost:11434
+  chat_model: llama3.2:3b          # alternatives: qwen2.5:3b, phi3:mini, qwen2.5:1.5b (low-RAM laptops)
+  embed_model: nomic-embed-text
+  temperature: 0.1
+  num_ctx: 4096
+  timeout_s: 300
+
+retrieval:
+  chunk_size: 700        # characters per chunk
+  chunk_overlap: 120
+  top_k: 4
+  mode: hybrid           # dense | bm25 | hybrid (Reciprocal Rank Fusion)
+
+llmops:
+  prompt_version: v2                 # see prompts/registry.yaml
+  enable_guardrails: true
+  enable_cache: true
+  cache_similarity: 0.92             # cosine similarity for a semantic-cache hit
+  min_retrieval_score: 0.45          # below this the bot escalates to the human helpdesk
+  min_groundedness: 0.5              # below this a verification disclaimer is added
+  mlflow_tracking_uri: sqlite:///storage/mlflow.db
+  mlflow_experiment: christ-helpdesk-chatbot
+
+paths:
+  kb_dir: data/kb
+  eval_file: data/eval/golden_qa.json
+  prompts_file: prompts/registry.yaml
+  storage_dir: storage
+  results_dir: results
+
+# Used on the cover page of the generated report - edit before submitting
+report:
+  title: "AI-Powered Student Helpdesk Chatbot for CHRIST (Deemed to be University) using LLM, RAG and LLMOps"
+  activity: "LCA Activity - Experiential Learning and Problem-Based Learning (Explore LLM / RAG / LLMOps)"
+  student_name: "Sankhe Athashree Sanjay"
+  register_no: "2548546"
+  class: "MSAIM (Batch 2025-27)"
+  department: "Department of Computer Science"
+  course: "MLOPS"
+  faculty: "Dr. Chandra"
